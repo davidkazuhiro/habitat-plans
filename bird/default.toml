@@ -12,8 +12,6 @@ interfaces = [
   "lo"
 ]
 
-device_scan_time = 10
-
 [bgp]
 enabled = false
 asn = 65000

@@ -1,0 +1,10 @@
+pkg_name=libnl
+pkg_origin=davidkazuhiro
+pkg_version="3.2.25"
+pkg_maintainer="David Somers-Harris <david@somers-harris.com>"
+pkg_license=("Apache-2.0")
+pkg_source="https://www.infradead.org/~tgr/libnl/files/${pkg_name}-${pkg_version}.tar.gz"
+pkg_shasum="8beb7590674957b931de6b7f81c530b85dc7c1ad8fbda015398bc1e8d1ce8ec5"
+pkg_build_deps=(core/make core/gcc core/bison core/flex core/m4)
+pkg_description="The libnl suite is a collection of libraries providing APIs to netlink protocol based Linux kernel interfaces."
+pkg_upstream_url="https://www.infradead.org/~tgr/libnl/"

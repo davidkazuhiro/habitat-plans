@@ -18,6 +18,6 @@ pkg_description="Ipvsadm is  used  to set up, maintain or inspect the virtual se
 pkg_upstream_url="http://kb.linuxvirtualserver.org/wiki/Ipvsadm"
 
 do_build() {
-  patch Makefile /src/makefile.patch
+  patch Makefile $PLAN_CONTEXT/makefile.patch
   make
 }

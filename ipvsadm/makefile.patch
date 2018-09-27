@@ -1,0 +1,8 @@
+66c66
+< LIBS		= -lpopt
+---
+> LIBS		= $(shell pkg-config --libs popt)
+142c142
+< 		$(CC) $(CFLAGS) $(INCLUDE) $(DEFINES) -c -o $@ $<
+---
+> 		$(CC) $(shell pkg-config --cflags-only-I popt) $(CFLAGS) $(INCLUDE) $(DEFINES) -c -o $@ $<

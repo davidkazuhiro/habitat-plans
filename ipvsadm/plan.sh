@@ -9,7 +9,9 @@ pkg_shasum="297f5cd459c3eef81ed0ca32e53bf320ed6b132fe7ed6ea5e44aa6b1fbd2a7de"
 pkg_build_deps=(
   core/gcc
   core/make
+  core/patch
   core/pkg-config
+  core/popt
   core/which
   davidkazuhiro/libnl
 )
@@ -37,5 +39,6 @@ pkg_build_deps=(
 # pkg_upstream_url="http://example.com/project-name"
 
 do_build() {
+  patch Makefile /src/makefile.patch
   make
 }

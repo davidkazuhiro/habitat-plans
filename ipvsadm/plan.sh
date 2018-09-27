@@ -31,5 +31,5 @@ pkg_build_deps=(core/make core/gcc core/pkg-config davidkazuhiro/libnl)
 # pkg_upstream_url="http://example.com/project-name"
 
 do_build() {
-  attach make
+  make
 }

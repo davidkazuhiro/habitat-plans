@@ -6,6 +6,7 @@ pkg_license=("Apache-2.0")
 pkg_source="https://www.infradead.org/~tgr/libnl/files/${pkg_name}-${pkg_version}.tar.gz"
 pkg_shasum="8beb7590674957b931de6b7f81c530b85dc7c1ad8fbda015398bc1e8d1ce8ec5"
 pkg_build_deps=(core/make core/gcc core/bison core/flex core/m4)
+pkg_deps=(core/glibc)
 pkg_lib_dirs=(lib)
 pkg_pconfig_dirs=(lib/pkgconfig)
 pkg_include_dirs=(include/libnl3)

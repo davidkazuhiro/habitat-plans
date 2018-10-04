@@ -19,7 +19,7 @@ pkg_deps=(
   davidkazuhiro/libnl
 )
 pkg_bin_dirs=(sbin)
-pkg_description="Ipvsadm is  used  to set up, maintain or inspect the virtual server table in the Linux kernel."
+pkg_description="Ipvsadm is used to set up, maintain or inspect the virtual server table in the Linux kernel."
 pkg_upstream_url="http://kb.linuxvirtualserver.org/wiki/Ipvsadm"
 
 do_setup_environment() {

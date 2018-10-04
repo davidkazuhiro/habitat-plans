@@ -14,8 +14,17 @@ pkg_build_deps=(
   core/which
   davidkazuhiro/libnl
 )
+pkg_deps=(
+  core/popt
+  davidkazuhiro/libnl
+)
+pkg_bin_dirs=(sbin)
 pkg_description="Ipvsadm is  used  to set up, maintain or inspect the virtual server table in the Linux kernel."
 pkg_upstream_url="http://kb.linuxvirtualserver.org/wiki/Ipvsadm"
+
+do_setup_environment() {
+  set_buildtime_env BUILD_ROOT ${pkg_prefix}
+}
 
 do_build() {
   patch Makefile $PLAN_CONTEXT/makefile.patch

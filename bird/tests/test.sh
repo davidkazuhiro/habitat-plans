@@ -22,4 +22,7 @@ if [ "${SKIPBUILD}" -eq 0 ]; then
   set +e
 fi
 
+echo "Sleeping for 5 seconds hoping bird will start..."
+sleep 5
+
 bats "${TESTDIR}/test.bats"

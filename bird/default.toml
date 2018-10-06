@@ -1,22 +1,29 @@
-# Use this file to templatize your application's native configuration files.
-# See the docs at https://www.habitat.sh/docs/create-packages-configure/.
-# You can safely delete this file if you don't need it.
-
+[[filters]]
+name = "sample"
 accept = [
   "192.0.2.0/24",
   "198.51.100.0/24",
   "203.0.113.0/24"
 ]
 
-interfaces = [
-  "lo"
-]
+[[bgp_templates]]
+name = "uplink"
+local = "as 64511"
+export = "filter sample"
+import = "none"
 
-[bgp]
-enabled = false
-asn = 65000
-neighbors = [
-  "192.0.2.1",
-  "198.51.100.1",
-  "203.0.113.1"
-]
+[[bgp]]
+name = "uplink_router"
+template = "uplink"
+neighbor = "192.0.2.1 as 64510"
+
+[[bgp_templates]]
+name = "downlink"
+local = "as 64511"
+export = "none"
+import = "filter sample"
+
+[[bgp]]
+name = "downlink_router"
+template = "downlink"
+neighbor = "203.0.113.1 as 64508"
